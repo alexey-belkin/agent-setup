@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent setup"
+  short_description: "Настройка и развитие агентского пространства"
+  default_prompt: "Используй $agent-setup для настройки рабочего пространства по моей задаче."
