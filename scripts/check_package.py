@@ -40,6 +40,13 @@ def check(root):
     root = root.resolve()
     skill = root / 'skills/agent-setup'
     errors, edges, external = [], {}, set()
+    required = [
+        skill / 'assets/templates/auto-improve.template.md',
+        skill / 'scripts/check_auto_improve.py',
+    ]
+    for path in required:
+        if not path.is_file():
+            errors.append(f'Missing mandatory auto-improve deliverable: {path.relative_to(root)}')
     aliases = {'CLAUDE.md': 'AGENTS.md', '.agents/skills/agent-setup': 'skills/agent-setup', '.claude/skills/agent-setup': 'skills/agent-setup'}
     files = []
     for path in root.rglob('*'):
@@ -99,7 +106,7 @@ def check(root):
             pending.extend(edges.get(node, set()) - reached)
     for node in set(edges) - reached:
         errors.append(f'Markdown unreachable from AGENTS: {node.relative_to(root)}')
-    return {'version': (root / 'VERSION').read_text().strip(), 'scope': 'Static structure/link/privacy-marker scan only; no skill or model execution', 'files': len(files), 'markdownFiles': len(edges), 'externalLinks': sorted(external), 'skillSelfContained': not any('outside bundle' in e for e in errors), 'behaviorTests': 'not-run by explicit user instruction', 'errors': errors, 'status': 'fail' if errors else 'pass'}
+    return {'version': (root / 'VERSION').read_text().strip(), 'scope': 'Static structure/link/privacy-marker scan only; no skill or model execution', 'files': len(files), 'markdownFiles': len(edges), 'externalLinks': sorted(external), 'skillSelfContained': not any('outside bundle' in e for e in errors), 'mandatoryAutoImproveDeliverables': all(p.is_file() for p in required), 'behaviorTests': 'not-run by explicit user instruction', 'errors': errors, 'status': 'fail' if errors else 'pass'}
 
 
 if __name__ == '__main__':

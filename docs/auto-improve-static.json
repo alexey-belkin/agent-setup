@@ -1,0 +1,84 @@
+{
+  "scope": "static fixtures; no model/skill execution",
+  "cases": [
+    {
+      "case": "codex-direct",
+      "expected": "pass",
+      "actual": "pass",
+      "filesUnchanged": true,
+      "pass": true
+    },
+    {
+      "case": "missing-installed-skill",
+      "expected": "fail",
+      "actual": "fail",
+      "filesUnchanged": true,
+      "pass": true
+    },
+    {
+      "case": "bare-mention",
+      "expected": "fail",
+      "actual": "fail",
+      "filesUnchanged": true,
+      "pass": true
+    },
+    {
+      "case": "code-example-only",
+      "expected": "fail",
+      "actual": "fail",
+      "filesUnchanged": true,
+      "pass": true
+    },
+    {
+      "case": "wrong-native-name",
+      "expected": "fail",
+      "actual": "fail",
+      "filesUnchanged": true,
+      "pass": true
+    },
+    {
+      "case": "empty-description",
+      "expected": "fail",
+      "actual": "fail",
+      "filesUnchanged": true,
+      "pass": true
+    },
+    {
+      "case": "moved-map-broken-outgoing",
+      "expected": "fail",
+      "actual": "fail",
+      "filesUnchanged": true,
+      "pass": true
+    },
+    {
+      "case": "moved-map-recalculated",
+      "expected": "pass",
+      "actual": "pass",
+      "filesUnchanged": true,
+      "pass": true
+    },
+    {
+      "case": "claude-delivery",
+      "expected": "pass",
+      "actual": "pass",
+      "pass": true
+    },
+    {
+      "case": "outside-project-rejected",
+      "pass": true
+    },
+    {
+      "case": "cli-with-spaces",
+      "expectedExit": 0,
+      "actualExit": 0,
+      "pass": true
+    },
+    {
+      "case": "cli-missing-entry",
+      "expectedExit": 1,
+      "actualExit": 1,
+      "pass": true
+    }
+  ],
+  "status": "pass"
+}

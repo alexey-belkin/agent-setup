@@ -1,21 +1,36 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scope": "Static structure/link/privacy-marker scan only; no skill or model execution",
-  "files": 39,
-  "markdownFiles": 32,
+  "files": 44,
+  "markdownFiles": 34,
   "externalLinks": [
     "https://code.claude.com/docs/en/skills",
     "https://github.com/Belkin-digital/repository-policy-linter",
     "https://learn.chatgpt.com/docs/build-skills"
   ],
   "skillSelfContained": true,
+  "mandatoryAutoImproveDeliverables": true,
   "behaviorTests": "not-run by explicit user instruction",
   "errors": [],
   "status": "pass",
-  "skillFormat": "pass: skill-creator quick_validate",
-  "tokenMeasurement": {
-    "encoding": "cl100k_base",
-    "largestMarkdownTokens": 6374,
-    "threshold": 15000
+  "skillFormat": {
+    "agent-setup": "pass: quick_validate",
+    "auto-improve-ready-asset": "pass: quick_validate of byte-identical SKILL.md copy"
+  },
+  "largestMarkdownTokens": 6608,
+  "tokenEncoding": "cl100k_base",
+  "autoImproveHelperFixtures": {
+    "cases": 12,
+    "status": "pass",
+    "scope": "static fixtures; no model/skill execution"
+  },
+  "preparedBehaviorTests": {
+    "newCases": [
+      "A09",
+      "A10",
+      "A11"
+    ],
+    "status": "not-run",
+    "ongoingUserScenario": "not completed; no pass claimed"
   }
 }
