@@ -1,8 +1,8 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "scope": "Static structure/link/privacy-marker scan only; no skill or model execution",
-  "files": 46,
-  "markdownFiles": 36,
+  "files": 47,
+  "markdownFiles": 37,
   "externalLinks": [
     "https://code.claude.com/docs/en/skills",
     "https://github.com/Belkin-digital/repository-policy-linter",
@@ -14,17 +14,21 @@
   "errors": [],
   "status": "pass",
   "skillFormat": {
-    "agent-setup": "pass: quick_validate"
+    "agent-setup": "pass: quick_validate",
+    "auto-improve-ready-asset": "pass: quick_validate of byte-identical SKILL.md copy"
   },
   "largestMarkdownTokens": 6724,
   "tokenEncoding": "cl100k_base",
   "preparedBehaviorTests": {
     "newCases": [
-      "A12",
-      "A13",
-      "A14"
+      "A15",
+      "V15-T4",
+      "V15-T5"
+    ],
+    "updatedCases": [
+      "V15-T3 precondition only"
     ],
     "status": "not-run",
-    "unchangedRows": "A00–A11 byte-identical; historical statuses not changed"
+    "unchangedRows": "A00–A14 byte-identical; V15-T1/T2 and V15-T3 expected result unchanged"
   }
 }
