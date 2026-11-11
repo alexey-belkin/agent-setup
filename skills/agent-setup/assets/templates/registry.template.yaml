@@ -1,0 +1,22 @@
+# Adapt to <area>/registry.yaml. Paths are relative to that file.
+version: 1
+title: Реестр документов
+output: REGISTRY.md
+# For a generated block in an existing README with registry:start/end markers:
+# output: README.md
+# section: true
+tables:
+  - heading: Документы
+    include: ["**/*.md"]
+    exclude: ["README.md", "*.template.md", "archive/**"]
+    sort: [path]
+    columns:
+      - {label: Документ, field: title, fallback: name, link: true}
+      - {label: ID, field: id}
+      - {label: Назначение, field: registry.summary}
+      - {label: Статус, field: status}
+# Optional explicit entries (scripts/attachments/immutable documents):
+# records:
+#   - path: example.pdf
+#     title: Reference material
+# Add records inside a table and define columns for their fields.

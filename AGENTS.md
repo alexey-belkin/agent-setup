@@ -7,6 +7,7 @@
 - Разговор до сборки: [discovery](skills/agent-setup/references/discovery.md); техническое обследование не заменяет согласование желаемого процесса.
 - Подключение профильного навыка: [deployment, §1.1](skills/agent-setup/references/deployment.md#11-подключение-профильного-навыка-к-работе); в рабочем маршруте нужны условие и требование применения, в приёмке — свидетельства процедуры отдельно от CLI.
 - Изменение workflow: [развёртывание](skills/agent-setup/references/deployment.md), [spec-authoring](skills/agent-setup/references/spec-authoring.md).
+- Утилиты переноса/реестров: [контракт и поставка](skills/agent-setup/references/workspace-tools.md); регрессии CLI — `python3 -B -m unittest discover -s scripts -p test_workspace_tools.py -v`. Это тесты файловых операций в temp, не запуск agent-setup.
 - Контекст/локальные нормы: [CORE](skills/agent-setup/references/practices/CORE.md).
 - Практики: [меню](skills/agent-setup/references/practices/README.md), [формат карточки](skills/agent-setup/references/practices/STANDARD.md), [краткие решения](skills/agent-setup/references/choices.md).
 - Методология: [прикладные P1–P10](skills/agent-setup/references/principles.md); определения не менять попутно с рецептом.

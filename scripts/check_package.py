@@ -44,6 +44,12 @@ def check(root):
         skill / 'assets/templates/auto-improve.template.md',
         skill / 'scripts/check_auto_improve.py',
     ]
+    workspace_tools = [skill / 'scripts' / name for name in
+                       ['move_artifacts.py', 'build_registries.py', 'workspace_paths.py', 'requirements.txt']]
+    workspace_tools += [skill / 'assets/templates/registry.template.yaml', skill / 'references/workspace-tools.md']
+    for path in workspace_tools:
+        if not path.is_file():
+            errors.append(f'Missing workspace tool deliverable: {path.relative_to(root)}')
     for path in required:
         if not path.is_file():
             errors.append(f'Missing mandatory auto-improve deliverable: {path.relative_to(root)}')
@@ -106,7 +112,7 @@ def check(root):
             pending.extend(edges.get(node, set()) - reached)
     for node in set(edges) - reached:
         errors.append(f'Markdown unreachable from AGENTS: {node.relative_to(root)}')
-    return {'version': (root / 'VERSION').read_text().strip(), 'scope': 'Static structure/link/privacy-marker scan only; no skill or model execution', 'files': len(files), 'markdownFiles': len(edges), 'externalLinks': sorted(external), 'skillSelfContained': not any('outside bundle' in e for e in errors), 'mandatoryAutoImproveDeliverables': all(p.is_file() for p in required), 'behaviorTests': 'not-run by explicit user instruction', 'errors': errors, 'status': 'fail' if errors else 'pass'}
+    return {'version': (root / 'VERSION').read_text().strip(), 'scope': 'Static structure/link/privacy-marker scan only; no skill or model execution', 'files': len(files), 'markdownFiles': len(edges), 'externalLinks': sorted(external), 'skillSelfContained': not any('outside bundle' in e for e in errors), 'mandatoryAutoImproveDeliverables': all(p.is_file() for p in required), 'workspaceToolDeliverables': all(p.is_file() for p in workspace_tools), 'behaviorTests': 'not-run by explicit user instruction', 'errors': errors, 'status': 'fail' if errors else 'pass'}
 
 
 if __name__ == '__main__':

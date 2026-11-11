@@ -1,0 +1,33 @@
+{
+  "scope": "Deterministic filesystem/CLI regressions in temporary directories; no model or agent-setup execution",
+  "command": "python3 -B -m unittest discover -s scripts -p test_workspace_tools.py -v",
+  "testsRun": 21,
+  "failures": 0,
+  "errors": 0,
+  "status": "pass",
+  "dependency": "PyYAML 6.0.3",
+  "cases": [
+    "test_collisions_escape_and_overlapping_rejected_without_writes",
+    "test_config_consumers_reported_and_apply_blocked_until_acknowledged",
+    "test_copied_scripts_run_as_clis_without_original_checkout",
+    "test_directory_and_two_files_move_internal_and_external_links",
+    "test_excluded_docs_are_not_changed_and_excluded_sources_refused",
+    "test_move_io_failure_rolls_back_renames_and_edits",
+    "test_move_plan_detects_concurrent_edit",
+    "test_move_preview_then_incoming_outgoing_and_reference_links",
+    "test_move_then_regenerate_registry_and_check",
+    "test_registry_duplicate_yaml_and_missing_records_are_errors",
+    "test_registry_invalid_schema_and_duplicate_outputs_do_not_write",
+    "test_registry_output_escape_and_symlink_rejected",
+    "test_registry_preserves_readme_bytes_outside_block",
+    "test_registry_preview_check_apply_and_metadata_updates",
+    "test_registry_rebases_metadata_links_and_explicit_non_markdown_records",
+    "test_registry_records_conflicts_and_archives",
+    "test_registry_refuses_manual_file_and_malformed_markers",
+    "test_registry_validates_all_before_write",
+    "test_registry_write_failure_restores_prior_outputs",
+    "test_symlink_and_nested_repository_not_moved_or_followed",
+    "test_unicode_spaces_angles_balanced_paths_and_code_occurrence"
+  ],
+  "agentBehavior": "not-run by user instruction"
+}

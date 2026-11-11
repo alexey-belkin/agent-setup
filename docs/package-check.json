@@ -1,8 +1,8 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "scope": "Static structure/link/privacy-marker scan only; no skill or model execution",
-  "files": 48,
-  "markdownFiles": 38,
+  "files": 57,
+  "markdownFiles": 40,
   "externalLinks": [
     "https://code.claude.com/docs/en/skills",
     "https://github.com/Belkin-digital/repository-policy-linter",
@@ -10,6 +10,7 @@
   ],
   "skillSelfContained": true,
   "mandatoryAutoImproveDeliverables": true,
+  "workspaceToolDeliverables": true,
   "behaviorTests": "not-run by explicit user instruction",
   "errors": [],
   "status": "pass",
@@ -18,30 +19,30 @@
   },
   "largestMarkdownTokens": 6857,
   "tokenEncoding": "cl100k_base",
+  "workspaceToolsTests": {
+    "testsRun": 21,
+    "status": "pass",
+    "scope": "temporary filesystem fixtures and copied CLI entrypoints; no model/agent-setup execution"
+  },
   "preparedBehaviorTests": {
     "newCases": [
-      "A16",
-      "A17",
-      "A18",
-      "A19",
-      "A20"
+      "A21"
     ],
     "status": "not-run",
-    "unchangedRows": "A00–A15 byte-identical",
-    "deskReview": "instruction/requirement coverage reviewed; no agent behavior execution"
+    "unchangedRows": "A00–A20 byte-identical"
   },
   "globalInstalledDelivery": {
     "Codex": {
-      "version": "0.1.4",
+      "version": "0.1.5",
       "mode": "existing symlink to canonical skill",
       "contentMatches": true,
-      "scope": "filesystem delivery only; updated harness discovery and procedure behavior not-run"
+      "scope": "filesystem delivery only; agent behavior not-run"
     },
     "Claude": {
-      "version": "0.1.4",
+      "version": "0.1.5",
       "mode": "existing symlink to canonical skill",
       "contentMatches": true,
-      "scope": "filesystem delivery only; updated harness discovery and procedure behavior not-run"
+      "scope": "filesystem delivery only; agent behavior not-run"
     }
   }
 }
