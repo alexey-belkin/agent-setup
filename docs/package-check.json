@@ -1,8 +1,8 @@
 {
-  "version": "0.1.3",
+  "version": "0.1.4",
   "scope": "Static structure/link/privacy-marker scan only; no skill or model execution",
-  "files": 47,
-  "markdownFiles": 37,
+  "files": 48,
+  "markdownFiles": 38,
   "externalLinks": [
     "https://code.claude.com/docs/en/skills",
     "https://github.com/Belkin-digital/repository-policy-linter",
@@ -14,21 +14,34 @@
   "errors": [],
   "status": "pass",
   "skillFormat": {
-    "agent-setup": "pass: quick_validate",
-    "auto-improve-ready-asset": "pass: quick_validate of byte-identical SKILL.md copy"
+    "agent-setup": "pass: quick_validate"
   },
-  "largestMarkdownTokens": 6724,
+  "largestMarkdownTokens": 6857,
   "tokenEncoding": "cl100k_base",
   "preparedBehaviorTests": {
     "newCases": [
-      "A15",
-      "V15-T4",
-      "V15-T5"
-    ],
-    "updatedCases": [
-      "V15-T3 precondition only"
+      "A16",
+      "A17",
+      "A18",
+      "A19",
+      "A20"
     ],
     "status": "not-run",
-    "unchangedRows": "A00–A14 byte-identical; V15-T1/T2 and V15-T3 expected result unchanged"
+    "unchangedRows": "A00–A15 byte-identical",
+    "deskReview": "instruction/requirement coverage reviewed; no agent behavior execution"
+  },
+  "globalInstalledDelivery": {
+    "Codex": {
+      "version": "0.1.4",
+      "mode": "existing symlink to canonical skill",
+      "contentMatches": true,
+      "scope": "filesystem delivery only; updated harness discovery and procedure behavior not-run"
+    },
+    "Claude": {
+      "version": "0.1.4",
+      "mode": "existing symlink to canonical skill",
+      "contentMatches": true,
+      "scope": "filesystem delivery only; updated harness discovery and procedure behavior not-run"
+    }
   }
 }
